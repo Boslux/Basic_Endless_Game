@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
     {
         animator.SetTrigger("Attack2");
        
-        StartCoroutine(SwordController());
+        
     }
     public void Death()
     {
@@ -74,13 +74,13 @@ public class PlayerController : MonoBehaviour
         canJump = false;
         
     }  
-    IEnumerator SwordController()
+  /*  IEnumerator SwordController()
     {   //Sword obj Control 
         sword.SetActive(true);
         yield return new WaitForSeconds(0.4f);
         sword.SetActive(false);
 
-    }
+    }*/
     private void OnTriggerEnter2D(Collider2D cls)
     {
         if (cls.gameObject.CompareTag("ArrowAdd"))
