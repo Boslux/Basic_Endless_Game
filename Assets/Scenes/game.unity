@@ -980,8 +980,32 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 64115980, guid: 67e4f2d3f1b4f594badf52804b238300, type: 3}
+      propertyPath: coolDown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 64115980, guid: 67e4f2d3f1b4f594badf52804b238300, type: 3}
+      propertyPath: canAttack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 64115980, guid: 67e4f2d3f1b4f594badf52804b238300, type: 3}
       propertyPath: bulletAmmo
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 737901123156105331, guid: 67e4f2d3f1b4f594badf52804b238300, type: 3}
+      propertyPath: m_Size.x
+      value: 0.19359308
+      objectReference: {fileID: 0}
+    - target: {fileID: 737901123156105331, guid: 67e4f2d3f1b4f594badf52804b238300, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0467482
+      objectReference: {fileID: 0}
+    - target: {fileID: 737901123156105331, guid: 67e4f2d3f1b4f594badf52804b238300, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0350613
+      objectReference: {fileID: 0}
+    - target: {fileID: 737901123156105331, guid: 67e4f2d3f1b4f594badf52804b238300, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.02337426
       objectReference: {fileID: 0}
     - target: {fileID: 1620816813495672396, guid: 67e4f2d3f1b4f594badf52804b238300, type: 3}
       propertyPath: m_IsActive
@@ -1680,9 +1704,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 50e03e0353610e44fbecd69258a79f86, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5762aeeb0373efe409fcb18e92c049c4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.26
+  m_Volume: 0.13
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1965,7 +1989,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &923768189
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2175,7 +2199,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &926752476
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4087,7 +4111,7 @@ GameObject:
   - component: {fileID: 1810717998}
   - component: {fileID: 1810717999}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: spawner skeleton
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -4439,7 +4463,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1984596964
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4797,7 +4821,7 @@ GameObject:
   - component: {fileID: 2143370221}
   - component: {fileID: 2143370220}
   m_Layer: 0
-  m_Name: Spawner (1)
+  m_Name: spawner fly
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0

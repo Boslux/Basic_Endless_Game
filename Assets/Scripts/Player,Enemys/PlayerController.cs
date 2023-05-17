@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     public GameObject bullet;
     public int bulletAmmo=5;
     public Text Ammo;
+    bool canAttack=true;
+    public float coolDown;
+
 
     public GameObject sword;
     public bool canJump=true;
@@ -27,7 +30,7 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown("k"))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
         }
@@ -45,12 +48,18 @@ public class PlayerController : MonoBehaviour
     }
     public void Attack()
     {
-        if (bulletAmmo>0)
+        if (bulletAmmo>0 &&canAttack)
         {
             animator.SetTrigger("Attack");
             Instantiate(bullet, transform.position, Quaternion.identity);
             bulletAmmo--;
+            canAttack = false;
+            Invoke("CanAttack", coolDown);
         }
+    }
+    void CanAttack()
+    {
+        canAttack = true;
     }
     public void Attack2()
     {
