@@ -1,65 +1,60 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class enemyController : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
-    public float MoveSpeed;
-    //public Text goldText;
-    // public int gold;
+    [Header("comp")]
     Animator animator;
-    private int healt=3;
-    private bool isLive=true;
-    void Start()
-    {
-        animator= GetComponent<Animator>();
-    }
+    public GameObject arrowAdd;
+    public PlayerController pl;
 
+    [Header("val")]
+    private bool isLive = true;
+    public float moveSpeed;
     
+
+    public void Start()
+    {
+        animator = GetComponent<Animator>();
+        pl = GetComponent<PlayerController>();
+    }
     void Update()
     {
         RunLeft();
-       // goldText.text = "Gold:" + gold;
     }
     public void RunLeft()
     {
         if (isLive == true)
-        {
-            transform.Translate(-MoveSpeed * Time.deltaTime, 0, 0);
-        }
+            transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
     }
 
     public void Death()
     {
-        isLive=false;
-        animator.SetTrigger("Death");
-        Destroy(gameObject,0.3f);    
+        if (gameObject.name != "Fire")
+        {
+            isLive = false; // set death
+            animator.SetTrigger("Death"); //trigger to death animation
+            Destroy(gameObject, 0.3f); //destroy the object
+
+            float arrowDrop = Random.Range(0, 3);
+            //İf the enemy is a skeleton create arrow and move toward the player
+            if (arrowDrop==1)
+                Instantiate(arrowAdd, transform.position, Quaternion.identity);
+        }
     }
-
- /*   private void OnCollisionEnter2D(Collision2D cls)
-    {
-
-    }   
- */
     private void OnTriggerEnter2D(Collider2D cls)
     {
         if (cls.gameObject.CompareTag("Bullet"))
         {
-            //add Score system
-            //  gold++;
-            Destroy(cls.gameObject);
-            Death();    
-        }
-        if (cls.gameObject.CompareTag("Sword"))
-        {
             Death();
+            Destroy(cls.gameObject);
         }
         if (cls.gameObject.CompareTag("Player"))
         {
             cls.gameObject.GetComponent<PlayerController>().Death();
+            Debug.Log("öldü");
+
         }
     }
-
 }
-//timer

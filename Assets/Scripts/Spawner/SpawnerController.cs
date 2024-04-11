@@ -5,32 +5,29 @@ using UnityEngine;
 public class SpawnerController : MonoBehaviour
 {
     public Transform spawnPoint;
-    public GameObject spawnEnemy;
+    public GameObject[] enemy;
     float spawnTime;
     void Start()
     {
         StartCoroutine(SpawnSystem());
     }
-
-
-    void Update()
-    {
-
-    }
     IEnumerator SpawnSystem()
     {
         while (true)
         {
+            if (gameObject.name!="fly_enemy")
+                SpawnObject();
+
             spawnTime = Random.Range(1, 5);
             yield return new WaitForSeconds(spawnTime);
             SpawnObject();
         }
-
-
     }
     void SpawnObject()
     {
-        GameObject temp = Instantiate(spawnEnemy);
+        int randomIndex=Random.Range(0, enemy.Length);
+
+        GameObject temp = Instantiate(enemy[randomIndex]);
         temp.transform.position = spawnPoint.position;
     }
 }

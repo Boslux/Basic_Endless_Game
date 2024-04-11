@@ -346,7 +346,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 714, y: 226}
+  m_AnchoredPosition: {x: -385, y: 125}
   m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &692808772
@@ -386,7 +386,10 @@ MonoBehaviour:
 
     S= Use Arrow
 
-    Space= Jump'
+    Space= Jump
+
+    D= Untouchlable
+    Skill'
 --- !u!222 &692808773
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -516,7 +519,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 44, y: 125}
+  m_AnchoredPosition: {x: 0, y: 77}
   m_SizeDelta: {x: 204.7021, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1140873821
@@ -851,7 +854,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 44, y: -110.00006}
+  m_AnchoredPosition: {x: 0, y: -110}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1944792160
